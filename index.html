@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeu super Simon</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <header>
+      <div class="controle">
+        <div class="play">
+          <h3>Play</h3>
+          <br>
+          <button onclick="restart()" id="replay" class="option playMe">
+          <i id="play">&#9658;</i> <span id="playMsg">PLAY</span>
+          </button>
+        </div>
+        <div class="score">
+          <h3>Score</h3>
+          <br>
+          <div id="rounds" class="option"><i id="round">0</i> <span>/10</span></div>
+        </div>
+        <div class="mode">
+          <h3>Mode de jeu</h3>
+          <br>
+          <button onclick="mode('hard')"    id="hard"    class="option">       <i>&starf;</i> <span> Hard  </span>
+          <button onclick="mode('easy')" id="easy" class="option active"><i>&star;</i> <span>Easy</span></button>
+        </div>
+      </div>
+      <div class="regles">
+        <button onclick="afficher()" id="aide" class="btn">?</button>
+        <p id="cacher">
+        Le jeu, électronique, éclaire une des quatre couleurs et produit un son toujours associé à cette couleur. Le joueur doit alors appuyer sur la touche de la couleur qui vient de s'allumer dans un délai assez court.
+        <br>
+        <br>
+        Le jeu répète la même couleur et le même son, puis ajoute au hasard une nouvelle couleur. Le joueur doit reproduire cette nouvelle séquence. 
+        <br>
+        <br>
+        Chaque fois que le joueur reproduit correctement la séquence, le jeu ajoute une nouvelle couleur.
+        </p>
+      </div>
+        <h1 id="titre">Simon Game</h1> 
+      </header>
+  <div class="wrapper">
+    <h1 id="message">YOU<br>WIN</h1>
+    <h1 id="over"></h1>
+      <div id="plateau">
+        <div id="parties">
+          <div id="bleu"   class="quart" onclick="choix(bleu)"><div class="mask"></div></div>
+          <div id="vert"  class="quart" onclick="choix(vert)" ><div class="mask"></div></div>
+          <div id="jaune" class="quart" onclick="choix(jaune)"><div class="mask"></div></div>
+          <div id="rouge"   class="quart" onclick="choix(rouge)"><div class="mask"></div></div>
+        </div>
+      </div>
+  </div>
+  </main>
+</body>
+<script async defer src="script.js"></script>
+</html>
